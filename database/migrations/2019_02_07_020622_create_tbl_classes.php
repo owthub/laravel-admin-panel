@@ -15,6 +15,10 @@ class CreateTblClasses extends Migration
     {
         Schema::create('tbl_classes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string("name",30)->nullable();
+            $table->integer("class_section_id")->nullable();
+            $table->integer("seats_available")->default(0);
+            $table->integer("status")->default(1);
             $table->timestamps();
         });
     }
