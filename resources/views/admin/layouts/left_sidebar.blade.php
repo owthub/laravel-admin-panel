@@ -39,8 +39,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="index.html"><i class="fa fa-circle-o"></i> Add Section</a></li>
-                    <li class=""><a href="index.html"><i class="fa fa-circle-o"></i> List Sections</a></li>
+                    <li class=""><a href="{{ route('addclasssection') }}"><i class="fa fa-circle-o"></i> Add Section</a></li>
+                    <li class=""><a href="{{ route('listclasssection') }}"><i class="fa fa-circle-o"></i> List Sections</a></li>
                     <li class=""><a href="index.html"><i class="fa fa-circle-o"></i> Add Class</a></li>
                     <li><a href="index2.html"><i class="fa fa-circle-o"></i> List Classes</a></li>
                 </ul>

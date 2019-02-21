@@ -5,81 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\ClassSection;
 use Illuminate\Http\Request;
 
-class ClassSectionController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+class ClassSectionController extends Controller {
+
+    public function addSchoolSection() {
+        // function to add class sections
+        echo "Welcome to class section";
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function listSchoolSections() {
+        // function to list all created class sections
+        echo "Welcome to list class sections";
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ClassSection  $classSection
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ClassSection $classSection)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\ClassSection  $classSection
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(ClassSection $classSection)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ClassSection  $classSection
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, ClassSection $classSection)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\ClassSection  $classSection
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(ClassSection $classSection)
-    {
-        //
-    }
 }
