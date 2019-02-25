@@ -41,8 +41,8 @@
                 <ul class="treeview-menu">
                     <li class=""><a href="{{ route('addclasssection') }}"><i class="fa fa-circle-o"></i> Add Section</a></li>
                     <li class=""><a href="{{ route('listclasssection') }}"><i class="fa fa-circle-o"></i> List Sections</a></li>
-                    <li class=""><a href="index.html"><i class="fa fa-circle-o"></i> Add Class</a></li>
-                    <li><a href="index2.html"><i class="fa fa-circle-o"></i> List Classes</a></li>
+                    <li class=""><a href="{{ route('addschoolclass') }}"><i class="fa fa-circle-o"></i> Add Class</a></li>
+                    <li><a href="{{ route('listschoolclasses') }}"><i class="fa fa-circle-o"></i> List Classes</a></li>
                 </ul>
             </li>
             
@@ -55,10 +55,10 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="index.html"><i class="fa fa-circle-o"></i> Add Type</a></li>
-                    <li class=""><a href="index.html"><i class="fa fa-circle-o"></i> List Types</a></li>
-                    <li class=""><a href="index.html"><i class="fa fa-circle-o"></i> Add Faculty</a></li>
-                    <li><a href="index2.html"><i class="fa fa-circle-o"></i> List Faculties</a></li>
+                    <li class=""><a href="{{ route('addfacultyType') }}"><i class="fa fa-circle-o"></i> Add Type</a></li>
+                    <li class=""><a href="{{ route('listfacultyTypes') }}"><i class="fa fa-circle-o"></i> List Types</a></li>
+                    <li class=""><a href="{{ route('addfaculty') }}"><i class="fa fa-circle-o"></i> Add Faculty</a></li>
+                    <li><a href="{{ route('listfaculties') }}"><i class="fa fa-circle-o"></i> List Faculties</a></li>
                 </ul>
             </li>
             
@@ -71,8 +71,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="index.html"><i class="fa fa-circle-o"></i> Add Student</a></li>
-                    <li class=""><a href="index.html"><i class="fa fa-circle-o"></i> List Students</a></li>
+                    <li class=""><a href="{{ route('addstudent') }}"><i class="fa fa-circle-o"></i> Add Student</a></li>
+                    <li class=""><a href="{{ route('liststudents') }}"><i class="fa fa-circle-o"></i> List Students</a></li>
                 </ul>
             </li>
             
