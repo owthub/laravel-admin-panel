@@ -9,11 +9,11 @@ class SchoolClassController extends Controller {
 
     public function addSchoolClass() {
 
-        echo "This is add Class Method";
+        return view("admin.views.add_class");
     }
-    
-    public function listSchoolClasses(){
-        
+
+    public function listSchoolClasses() {
+
         echo "This is listing all classes";
     }
 
