@@ -9,7 +9,7 @@ class FacultyController extends Controller {
 
     public function addFaculty() {
 
-        echo "This is add faculty page";
+        return view("admin.views.add_faculty");
     }
 
     public function listFaculties() {
