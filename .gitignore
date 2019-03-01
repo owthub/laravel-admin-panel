@@ -5,7 +5,8 @@
 /vendor
 /public/bower_components
 /public/plugins
-/public/assets/js
+/public/assets/js/
+public/assets/js/jquery.validate.js
 /.idea
 /.vagrant
 Homestead.json
