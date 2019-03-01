@@ -72,7 +72,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="faculty_photo">Address</label>
+                                <label for="faculty_address">Address</label>
                                 <textarea class="form-control" name="faculty_address" id="faculty_address" placeholder="Enter Address"></textarea>
                             </div>
 
