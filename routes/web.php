@@ -5,8 +5,11 @@ Route::get("/","AdminHomeController@dashboard");
 // clsses routes
 Route::get("/add-section","ClassSectionController@addSchoolSection")->name("addclasssection");
 Route::get("/list-sections","ClassSectionController@listSchoolSections")->name("listclasssection");
+Route::get("/list-sections-data","ClassSectionController@listAllSections")->name('listallsection');
+
 Route::get("/add-class","SchoolClassController@addSchoolClass")->name('addschoolclass');
 Route::get("/list-classes","SchoolClassController@listSchoolClasses")->name('listschoolclasses');
+
 
 // faculty routes
 Route::get("/add-faculty-type","FacultyTypeController@addFacultyType")->name("addfacultyType");

@@ -19,3 +19,24 @@
 <script src="{!! asset('assets/js/sweetalert.js') !!}"></script>
 
 <script src="{!! asset('assets/js/custom-script.js') !!}"></script>
+
+<script>
+    $(function () {
+        
+        if($('#class-sections').length > 0){
+            
+            $('#class-sections').DataTable({
+               processing: true,
+               serverSide: true,
+               ajax: "{{ route('listallsection') }}",
+               columns: [
+                        { data: 'id', name: 'id' },
+                        { data: 'section', name: 'section' },
+                        { data: 'status', name: 'status' },
+                        { data: 'action_btns', name: 'action_btns' },
+                     ]
+            });
+        }
+        
+    });
+</script>
