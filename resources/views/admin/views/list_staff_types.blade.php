@@ -9,11 +9,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            List Sections
+            List Staff Types
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">List Sections</li>
+            <li class="active">List Staff Types</li>
         </ol>
     </section>
 
@@ -28,11 +28,11 @@
                     <div class="box-header with-border">
                     </div>
                     <!-- /.box-header -->
-                    <table class="table table-bordered" id="class-sections">
+                    <table class="table table-bordered" id="list-staff-types">
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Section Name</th>
+                                <th>Type</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
