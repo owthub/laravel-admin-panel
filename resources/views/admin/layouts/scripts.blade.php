@@ -70,5 +70,45 @@
             });
         }
         
+        if($('#list-faculties').length > 0){  // code for list faculties
+            
+            $('#list-faculties').DataTable({
+               processing: true,
+               serverSide: true,
+               ajax: "{{ route('listallfaculties') }}",
+               columns: [
+                        { data: 'id', name: 'id' },
+                        { data: 'profile_photo', name: 'profile_photo' },
+                        { data: 'type', name: 'type' },
+                        { data: 'name', name: 'name' },
+                        { data: 'email', name: 'email' },
+                        { data: 'phone_no', name: 'phone_no' },
+                        { data: 'gender', name: 'gender' },
+                        { data: 'status', name: 'status' },
+                        { data: 'action_btns', name: 'action_btns' },
+                     ]
+            });
+        }
+        
+        if($('#list-students').length > 0){  // code for list students
+            
+            $('#list-students').DataTable({
+               processing: true,
+               serverSide: true,
+               ajax: "{{ route('listallstudents') }}",
+               columns: [
+                        { data: 'reg_no', name: 'reg_no' },
+                        { data: 'profile_photo', name: 'profile_photo' },
+                        { data: 'name', name: 'name' },
+                        { data: 'email', name: 'email' },
+                        { data: 'phone_no', name: 'phone_no' },
+                        { data: 'roll_no', name: 'roll_no' },
+                        { data: 'gender', name: 'gender' },
+                        { data: 'status', name: 'status' },
+                        { data: 'action_btns', name: 'action_btns' },
+                     ]
+            });
+        }
+        
     });
 </script>

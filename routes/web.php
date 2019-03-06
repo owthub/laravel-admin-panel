@@ -19,7 +19,9 @@ Route::get("/list-faculty-types-data","FacultyTypeController@listAllFacultyTypes
 
 Route::get("/add-faculty","FacultyController@addFaculty")->name("addfaculty");
 Route::get("/list-faculties","FacultyController@listFaculties")->name("listfaculties");
+Route::get("/list-all-faculties","FacultyController@listAllFaculties")->name("listallfaculties");
 
 // student routes
 Route::get("/add-student","StudentController@addStudent")->name("addstudent");
 Route::get("/list-students","StudentController@listStudents")->name("liststudents");
+Route::get("/list-all-students","StudentController@listAllStudents")->name("listallstudents");
