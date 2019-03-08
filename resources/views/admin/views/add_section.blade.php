@@ -25,11 +25,24 @@
             <div class="col-md-6">
                 <!-- general form elements -->
                 <div class="box box-primary">
-                    <div class="box-header with-border">
+                    
+                    @if(session()->has("message"))
+                    <div class="alert alert-success">
+                        <p>{{ session('message') }}</p>
                     </div>
+                    @endif
+                    
+                    @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
+                    @endif
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" id='frm-add-section' method=''>
+                    <form role="form" id='frm-add-section' method='post' action="{{ route('savesection') }}">
+                        {!! csrf_field() !!}
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="section_name">Section name</label>

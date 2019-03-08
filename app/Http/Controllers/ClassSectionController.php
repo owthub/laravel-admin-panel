@@ -6,6 +6,7 @@ use App\Models\ClassSection;
 use Illuminate\Http\Request;
 use Datatables;
 use App\Models\StudentClass;
+use Validator;
 
 class ClassSectionController extends Controller {
 
@@ -29,6 +30,33 @@ class ClassSectionController extends Controller {
                 })
                 ->rawColumns(["action_btns"])
                 ->make(true);
+    }
+    
+    public function saveClassSection(Request $request){
+        
+        $validator = Validator::make(array(
+            "section"=>$request->section_name
+        ),array(
+            "section"=>"required|unique:tbl_class_sections"
+        ));
+        
+        if($validator->fails()){
+            
+            return redirect("add-section")->withErrors($validator)->withInput();
+        }else{
+            
+            // successfully we have passed our form
+            $section = new StudentClass;
+            $section->section = $request->section_name;
+            $section->status = $request->dd_status;
+            
+            $section->save();
+            
+            $request->session()->flash("message","Class Section has been created successfully");
+            
+            return redirect("add-section");
+        }
+        
     }
 
 }
