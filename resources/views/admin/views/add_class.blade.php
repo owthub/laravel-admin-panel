@@ -25,31 +25,48 @@
             <div class="col-md-6">
                 <!-- general form elements -->
                 <div class="box box-primary">
-                    <div class="box-header with-border">
+                   
+                    @if(session()->has("message"))
+                    <div class="alert alert-success">
+                        <p>{{ session('message') }}</p>
                     </div>
+                    @endif
+                    
+                    @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
+                    @endif
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" id='frm-add-class' method=''>
+                    <form role="form" id='frm-add-class' method='post' action="{{ route('saveclass') }}">
+                        {{ csrf_field() }}
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="class_name">Class name</label>
                                 <input type="text" class="form-control" id="class_name" name='class_name' placeholder="Enter class name">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="dd_section">Choose section</label>
                                 <select class='form-control' id='dd_section' name='dd_section'>
-                                    <option value='1'>A</option>
-                                    <option value='2'>B</option>
-                                    <option value='3'>C</option>
+                                    <option value="-1">Select Section</option>
+                                    @if(count($sections) > 0)
+                                    @foreach($sections as $key=>$section)
+                                    <option value='{{ $section->id }}'>{{ $section->section }}</option>
+                                    @endforeach
+                                    @endif
+
                                 </select>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="seats_available">Seats Available</label>
                                 <input type="number" min="1" class="form-control" id="seats_available" name='seats_available' placeholder="Enter seats">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="dd_status">Status</label>
                                 <select class='form-control' id='dd_status' name='dd_status'>
@@ -57,7 +74,7 @@
                                     <option value='0'>Inactive</option>
                                 </select>
                             </div>
-                            
+
                         </div>
                         <!-- /.box-body -->
 

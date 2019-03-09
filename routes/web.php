@@ -11,6 +11,7 @@ Route::post("/save-section","ClassSectionController@saveClassSection")->name('sa
 Route::get("/add-class","SchoolClassController@addSchoolClass")->name('addschoolclass');
 Route::get("/list-classes","SchoolClassController@listSchoolClasses")->name('listschoolclasses');
 Route::get("/list-classes-data","SchoolClassController@listAllClasses")->name('listallclasses');
+Route::post("/save-class","SchoolClassController@saveClassData")->name('saveclass');
 
 
 // faculty routes
