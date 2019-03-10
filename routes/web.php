@@ -18,6 +18,7 @@ Route::post("/save-class","SchoolClassController@saveClassData")->name('saveclas
 Route::get("/add-faculty-type","FacultyTypeController@addFacultyType")->name("addfacultyType");
 Route::get("/list-faculty-types","FacultyTypeController@listFacultyTypes")->name("listfacultyTypes");
 Route::get("/list-faculty-types-data","FacultyTypeController@listAllFacultyTypes")->name("listallstafftypes");
+Route::post("/save-faculty-type","FacultyTypeController@saveFacultyType")->name("savefacultytype");
 
 Route::get("/add-faculty","FacultyController@addFaculty")->name("addfaculty");
 Route::get("/list-faculties","FacultyController@listFaculties")->name("listfaculties");

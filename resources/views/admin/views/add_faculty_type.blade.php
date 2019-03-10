@@ -25,11 +25,23 @@
             <div class="col-md-6">
                 <!-- general form elements -->
                 <div class="box box-primary">
-                    <div class="box-header with-border">
+                    
+                    @if(session()->has("message"))
+                    <div class="alert alert-success">
+                        <p>{{ session('message') }}</p>
                     </div>
-                    <!-- /.box-header -->
+                    @endif
+                    
+                    @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
+                    @endif
                     <!-- form start -->
-                    <form role="form" id='frm-add-faculty-type' method=''>
+                    <form role="form" id='frm-add-faculty-type' method='post' action="{{ route('savefacultytype') }}">
+                        {{ csrf_field() }}
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="faculty_type">Faculty Type</label>

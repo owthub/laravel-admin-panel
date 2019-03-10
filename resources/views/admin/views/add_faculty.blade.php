@@ -34,9 +34,16 @@
                         <div class="form-group">
                             <label for="dd_type">Choose Type</label>
                             <select class='form-control' id='dd_type' name='dd_type'>
-                                <option value='1'>Teaching</option>
-                                <option value='2'>Non Teaching</option>
-                                <option value='3'>Labs Faculty</option>
+                                <option value='-1'>Select Faculty Type</option>
+                                @if(count($types) > 0)
+                                
+                                @foreach($types as $index => $type)
+                                
+                                <option value="{{ $type->id }}">{{ $type->type }}</option>
+                                
+                                @endforeach
+                                
+                                @endif
                             </select>
                         </div>
 

@@ -6,12 +6,15 @@ use App\Models\Faculty;
 use Illuminate\Http\Request;
 use Datatables;
 use DB;
+use App\Models\FacultyType;
 
 class FacultyController extends Controller {
 
     public function addFaculty() {
 
-        return view("admin.views.add_faculty");
+        $types = FacultyType::where(["status" => 1])->get();
+
+        return view("admin.views.add_faculty", ["types" => $types]);
     }
 
     public function listFaculties() {
