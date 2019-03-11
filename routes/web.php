@@ -23,6 +23,7 @@ Route::post("/save-faculty-type","FacultyTypeController@saveFacultyType")->name(
 Route::get("/add-faculty","FacultyController@addFaculty")->name("addfaculty");
 Route::get("/list-faculties","FacultyController@listFaculties")->name("listfaculties");
 Route::get("/list-all-faculties","FacultyController@listAllFaculties")->name("listallfaculties");
+Route::post("/save-faculty","FacultyController@saveFaculty")->name("savefaculty");
 
 // student routes
 Route::get("/add-student","StudentController@addStudent")->name("addstudent");

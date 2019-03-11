@@ -25,24 +25,36 @@
             <div class="col-md-6">
                 <!-- general form elements -->
                 <div class="box box-primary">
-                    <div class="box-header with-border">
-                    </div>
-                    <!-- /.box-header -->
-                    <!-- form start -->
-                    <form role="form" id='frm-add-faculty' method=''>
 
+                    @if(session()->has("message"))
+                    <div class="alert alert-success">
+                        <p>{{ session('message') }}</p>
+                    </div>
+                    @endif
+
+                    @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
+                    @endif
+
+                    <!-- form start -->
+                    <form role="form" id='frm-add-faculty' method='post' action="{{ route('savefaculty') }}" enctype="multipart/form-data">
+                        {{ csrf_field() }}
                         <div class="form-group">
                             <label for="dd_type">Choose Type</label>
                             <select class='form-control' id='dd_type' name='dd_type'>
                                 <option value='-1'>Select Faculty Type</option>
                                 @if(count($types) > 0)
-                                
+
                                 @foreach($types as $index => $type)
-                                
+
                                 <option value="{{ $type->id }}">{{ $type->type }}</option>
-                                
+
                                 @endforeach
-                                
+
                                 @endif
                             </select>
                         </div>
@@ -69,8 +81,13 @@
                             <div class="form-group">
                                 <label for="dd_gender">Gender</label>
                                 <select class='form-control' id='dd_gender' name='dd_gender'>
-                                    <option value='1'>Male</option>
-                                    <option value='2'>Female</option>
+                                    @if(count($genders) > 0)
+
+                                    @foreach($genders as $index => $gender)
+                                    <option value="{{ $gender->id }}">{{ ucfirst($gender->type) }}</option>
+                                    @endforeach
+
+                                    @endif
                                 </select>
                             </div>
                             <div class="form-group">
