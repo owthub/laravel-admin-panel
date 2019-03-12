@@ -29,3 +29,4 @@ Route::post("/save-faculty","FacultyController@saveFaculty")->name("savefaculty"
 Route::get("/add-student","StudentController@addStudent")->name("addstudent");
 Route::get("/list-students","StudentController@listStudents")->name("liststudents");
 Route::get("/list-all-students","StudentController@listAllStudents")->name("listallstudents");
+Route::post("/save-student","StudentController@saveStudent")->name("savestudent");

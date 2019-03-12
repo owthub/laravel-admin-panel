@@ -25,12 +25,23 @@
             <div class="col-md-6">
                 <!-- general form elements -->
                 <div class="box box-primary">
-                    <div class="box-header with-border">
+                    
+                     @if(session()->has("message"))
+                    <div class="alert alert-success">
+                        <p>{{ session('message') }}</p>
                     </div>
-                    <!-- /.box-header -->
+                    @endif
+                    
+                    @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
+                    @endif
                     <!-- form start -->
-                    <form role="form" id='frm-add-student' method=''>
-
+                    <form role="form" id='frm-add-student' method='post' action="{{ route('savestudent') }}" enctype="multipart/form-data">
+                        {{ csrf_field() }}
                         <div class="form-group">
                             <label for="reg_no">Registration No</label>
                             <input type="text" class="form-control" id="reg_no" name='reg_no' placeholder="Enter Registration no">
@@ -39,8 +50,15 @@
                         <div class="form-group">
                             <label for="dd_gender">Gender</label>
                             <select class='form-control' id='dd_gender' name='dd_gender'>
-                                <option value='1'>Male</option>
-                                <option value='2'>Female</option>
+                                @if(count($genders) > 0)
+                                
+                                @foreach($genders as $index => $gender)
+                                
+                                <option value="{{ $gender->id }}">{{ ucfirst($gender->type) }}</option>
+                                
+                                @endforeach
+                                
+                                @endif
                             </select>
                         </div>
 
@@ -83,7 +101,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="student_age">Student Age</label>
-                                <input type="number" class="form-control" id="student_age" name='student_age' placeholder="Enter age">
+                                <input type="number" min="3" class="form-control" id="student_age" name='student_age' placeholder="Enter age">
                             </div>
 
                             <div class="form-group">
