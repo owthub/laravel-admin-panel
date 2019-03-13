@@ -49,5 +49,38 @@
     </section>
     <!-- /.content -->
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(function () {
 
+        $(document).on("click", ".class-section-delete", function () {
+
+            var conf = confirm("Are you sure want to delete ?");
+
+            if (conf) {
+
+                // ajax call functions
+                var delete_id = $(this).attr("data-id"); // delete id of delete button
+
+                var postdata = {
+                    "_token": "{{ csrf_token() }}",
+                    "delete_id": delete_id
+                }
+
+                $.post("{{ route('deletesection') }}", postdata, function (response) {
+
+                    var data = $.parseJSON(response);
+
+                    if (data.status == 1) {
+
+                        location.reload();
+                    } else {
+
+                        alert(data.message);
+                    }
+                })
+            }
+        });
+    });
+</script>
 @endsection

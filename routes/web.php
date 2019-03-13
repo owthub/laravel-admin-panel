@@ -7,6 +7,7 @@ Route::get("/add-section","ClassSectionController@addSchoolSection")->name("addc
 Route::get("/list-sections","ClassSectionController@listSchoolSections")->name("listclasssection");
 Route::get("/list-sections-data","ClassSectionController@listAllSections")->name('listallsection');
 Route::post("/save-section","ClassSectionController@saveClassSection")->name('savesection');
+Route::post("/delete-section","ClassSectionController@deleteSection")->name('deletesection');
 
 Route::get("/add-class","SchoolClassController@addSchoolClass")->name('addschoolclass');
 Route::get("/list-classes","SchoolClassController@listSchoolClasses")->name('listschoolclasses');
