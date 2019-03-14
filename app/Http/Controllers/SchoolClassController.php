@@ -34,7 +34,8 @@ class SchoolClassController extends Controller {
         return Datatables::of($classes_query)
                         ->editColumn("action_btns", function($classes_query) {
 
-                            return '<a href="#" class="btn btn-info class-section-edit" data-id="' . $classes_query->id . '">Edit</a><a href="#" class="btn btn-danger class-section-delete" data-id="' . $classes_query->id . '">Delete</a>';
+                            return '<a href="#" class="btn btn-info class-section-edit" data-id="' . $classes_query->id . '">Edit</a>'
+                                    . '<a href="javascript:void(0)" class="btn btn-danger btn-class-delete" data-id="' . $classes_query->id . '">Delete</a>';
                         })
                         ->rawColumns(["action_btns"])
                         ->make(true);
@@ -69,6 +70,24 @@ class SchoolClassController extends Controller {
             
             return redirect("add-class");
         }
+    }
+    
+    public function deleteClass(Request $request) {
+
+        $id = $request->delete_id;
+
+        $class_data = SchoolClass::find($id);
+
+        if (isset($class_data->id)) {
+
+            $class_data->delete();
+
+            echo json_encode(array("status" => 1, "message" => "Class deleted successfully"));
+        }else{
+            echo json_encode(array("status" => 0, "message" => "Class doesnot exists"));
+        }
+        
+        die();
     }
 
 }

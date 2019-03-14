@@ -13,6 +13,7 @@ Route::get("/add-class","SchoolClassController@addSchoolClass")->name('addschool
 Route::get("/list-classes","SchoolClassController@listSchoolClasses")->name('listschoolclasses');
 Route::get("/list-classes-data","SchoolClassController@listAllClasses")->name('listallclasses');
 Route::post("/save-class","SchoolClassController@saveClassData")->name('saveclass');
+Route::post("/delete-class","SchoolClassController@deleteClass")->name('deleteclass');
 
 
 // faculty routes
@@ -20,6 +21,7 @@ Route::get("/add-faculty-type","FacultyTypeController@addFacultyType")->name("ad
 Route::get("/list-faculty-types","FacultyTypeController@listFacultyTypes")->name("listfacultyTypes");
 Route::get("/list-faculty-types-data","FacultyTypeController@listAllFacultyTypes")->name("listallstafftypes");
 Route::post("/save-faculty-type","FacultyTypeController@saveFacultyType")->name("savefacultytype");
+Route::post("/delete-faculty-type","FacultyTypeController@deleteFacultyType")->name("deletefacultytype");
 
 Route::get("/add-faculty","FacultyController@addFaculty")->name("addfaculty");
 Route::get("/list-faculties","FacultyController@listFaculties")->name("listfaculties");
