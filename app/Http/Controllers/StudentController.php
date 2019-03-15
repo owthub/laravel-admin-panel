@@ -43,7 +43,8 @@ class StudentController extends Controller {
                         })
                         ->editColumn("action_btns", function($students_query) {
 
-                            return '<a href="#" class="btn btn-info class-section-edit" data-id="' . $students_query->id . '">Edit</a><a href="#" class="btn btn-danger class-section-delete" data-id="' . $students_query->id . '">Delete</a>';
+                            return '<a href="#" class="btn btn-info class-section-edit" data-id="' . $students_query->id . '">Edit</a>'
+                                    . '<a href="#" class="btn btn-danger btn-student-delete" data-id="' . $students_query->id . '">Delete</a>';
                         })
                         ->rawColumns(["action_btns", "profile_photo"])
                         ->make(true);
@@ -72,14 +73,14 @@ class StudentController extends Controller {
                     "mother_name" => "required",
                     "student_age" => "required",
         ));
-        
-        if($validator->fails()){
-            
+
+        if ($validator->fails()) {
+
             return redirect("add-student")->withErrors($validator)->withInput();
-        }else{
-            
+        } else {
+
             $student = new Student;
-            
+
             $student->reg_no = $request->reg_no;
             $student->gender_id = $request->dd_gender;
             $student->name = $request->student_name;
@@ -88,29 +89,47 @@ class StudentController extends Controller {
             $student->phone_no = $request->student_phone;
             $student->address = $request->student_address;
             // student photo
-            
-            $valid_images = array("png","jpg","jpeg","gif");
-            
-            if($request->hasFile("student_photo") && in_array($request->student_photo->extension(),$valid_images)){
-                
+
+            $valid_images = array("png", "jpg", "jpeg", "gif");
+
+            if ($request->hasFile("student_photo") && in_array($request->student_photo->extension(), $valid_images)) {
+
                 $profile_image = $request->student_photo;
-                $imageName = time().".".$profile_image->getClientOriginalName();
-                $profile_image->move("resource/assets/images/student/",$imageName);
-                $uploadedImage = "resource/assets/images/student/".$imageName;
+                $imageName = time() . "." . $profile_image->getClientOriginalName();
+                $profile_image->move("resource/assets/images/student/", $imageName);
+                $uploadedImage = "resource/assets/images/student/" . $imageName;
                 $student->profile_photo = $uploadedImage;
             }
-            
+
             $student->father_name = $request->father_name;
             $student->mother_name = $request->mother_name;
             $student->age = $request->student_age;
             $student->status = $request->dd_status;
-            
+
             $student->save();
-            
-            $request->session()->flash("message","Student has been created successfully");
-            
+
+            $request->session()->flash("message", "Student has been created successfully");
+
             return redirect("add-student");
         }
+    }
+
+    public function deleteStudent(Request $request) {
+
+        $id = $request->delete_id;
+
+        $student_data = Student::find($id);
+
+        if (isset($student_data->id)) {
+
+            $student_data->delete();
+
+            echo json_encode(array("status" => 1, "message" => "Student deleted successfully"));
+        } else {
+            echo json_encode(array("status" => 0, "message" => "Student doesnot exists"));
+        }
+
+        die();
     }
 
 }

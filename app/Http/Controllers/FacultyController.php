@@ -50,7 +50,8 @@ class FacultyController extends Controller {
                         })
                         ->editColumn("action_btns", function($faculties_query) {
 
-                            return '<a href="#" class="btn btn-info class-section-edit" data-id="' . $faculties_query->id . '">Edit</a><a href="#" class="btn btn-danger class-section-delete" data-id="' . $faculties_query->id . '">Delete</a>';
+                            return '<a href="#" class="btn btn-info class-section-edit" data-id="' . $faculties_query->id . '">Edit</a>'
+                                    . '<a href="#" class="btn btn-danger btn-faculty-delete" data-id="' . $faculties_query->id . '">Delete</a>';
                         })
                         ->rawColumns(["action_btns", "profile_photo"])
                         ->make(true);
@@ -108,6 +109,24 @@ class FacultyController extends Controller {
 
             return redirect("add-faculty");
         }
+    }
+
+    public function deleteFaculty(Request $request) {
+
+        $id = $request->delete_id;
+
+        $faculty_data = Faculty::find($id);
+
+        if (isset($faculty_data->id)) {
+
+            $faculty_data->delete();
+
+            echo json_encode(array("status" => 1, "message" => "Faculty deleted successfully"));
+        } else {
+            echo json_encode(array("status" => 0, "message" => "Faculty doesnot exists"));
+        }
+
+        die();
     }
 
 }
