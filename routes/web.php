@@ -4,9 +4,11 @@ Route::get("/","AdminHomeController@dashboard");
 
 // clsses routes
 Route::get("/add-section","ClassSectionController@addSchoolSection")->name("addclasssection");
+Route::get("/edit-section/{id?}","ClassSectionController@editSchoolSection")->name("editclasssection");
 Route::get("/list-sections","ClassSectionController@listSchoolSections")->name("listclasssection");
 Route::get("/list-sections-data","ClassSectionController@listAllSections")->name('listallsection');
 Route::post("/save-section","ClassSectionController@saveClassSection")->name('savesection');
+Route::post("/edit-section-data","ClassSectionController@editSaveClassSection")->name('editsubmitsection');
 Route::post("/delete-section","ClassSectionController@deleteSection")->name('deletesection');
 
 Route::get("/add-class","SchoolClassController@addSchoolClass")->name('addschoolclass');
