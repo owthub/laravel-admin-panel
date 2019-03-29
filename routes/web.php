@@ -13,8 +13,10 @@ Route::post("/delete-section","ClassSectionController@deleteSection")->name('del
 
 Route::get("/add-class","SchoolClassController@addSchoolClass")->name('addschoolclass');
 Route::get("/list-classes","SchoolClassController@listSchoolClasses")->name('listschoolclasses');
+Route::get("/edit-class/{id?}","SchoolClassController@editClassData")->name("editclassdata");
 Route::get("/list-classes-data","SchoolClassController@listAllClasses")->name('listallclasses');
 Route::post("/save-class","SchoolClassController@saveClassData")->name('saveclass');
+Route::post("/edit-save-class","SchoolClassController@editSaveClassData")->name('editsaveclass');
 Route::post("/delete-class","SchoolClassController@deleteClass")->name('deleteclass');
 
 
