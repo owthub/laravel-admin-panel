@@ -29,7 +29,6 @@ class SchoolClassController extends Controller {
         $classes_query = DB::table("tbl_classes as class")
                 ->select("class.*", "section.section")
                 ->leftJoin("tbl_class_sections as section", "class.class_section_id", "=", "section.id")
-                ->where(["class.status" => 1])
                 ->get();
 
         return Datatables::of($classes_query)
@@ -38,7 +37,17 @@ class SchoolClassController extends Controller {
                             return '<a href="' . URL::to('/edit-class/' . $classes_query->id) . '" class="btn btn-info class-section-edit" data-id="' . $classes_query->id . '">Edit</a>'
                                     . '<a href="javascript:void(0)" class="btn btn-danger btn-class-delete" data-id="' . $classes_query->id . '">Delete</a>';
                         })
-                        ->rawColumns(["action_btns"])
+                        ->editColumn("status", function($classes_query) {
+
+                            if($classes_query->status){ // value = 1
+                                
+                                return '<button class="btn btn-success">Active</button>';
+                            }else{
+                                
+                                return '<button class="btn btn-danger">Inactive</button>';
+                            }
+                        })
+                        ->rawColumns(["action_btns","status"])
                         ->make(true);
     }
 
@@ -97,6 +106,39 @@ class SchoolClassController extends Controller {
         }
 
         die();
+    }
+
+    public function editSaveClassData(Request $request) {
+
+        $validator = Validator::make(array(
+                    "class_name" => $request->class_name,
+                    "dd_section" => $request->dd_section,
+                    "seats_available" => $request->seats_available
+                        ), array(
+                    "class_name" => "required",
+                    "dd_section" => "required|not_in:-1",
+                    "seats_available" => "required"
+        ));
+
+        $class_id = $request->class_id;
+
+        if ($validator->fails()) {
+
+            return redirect("edit-class/" . $class_id)->withErrors($validator)->withInput();
+        } else {
+
+            $class = SchoolClass::find($class_id);
+            $class->name = $request->class_name;
+            $class->class_section_id = $request->dd_section;
+            $class->seats_available = $request->seats_available;
+            $class->status = $request->dd_status;
+
+            $class->save();
+
+            $request->session()->flash("message", "Class has been updated successfully");
+
+            return redirect("edit-class/".$class_id);
+        }
     }
 
 }
