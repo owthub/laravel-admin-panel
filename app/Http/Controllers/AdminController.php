@@ -12,4 +12,9 @@ class AdminController extends Controller {
         return view("admin.views.login_form");
     }
 
+    public function checkUserLogin(Request $request) {
+
+        print_r($request->all());
+    }
+
 }

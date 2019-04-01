@@ -41,3 +41,4 @@ Route::post("/save-student", "StudentController@saveStudent")->name("savestudent
 Route::post("/delete-student", "StudentController@deleteStudent")->name("deletestudent");
 
 Route::get("/login", "AdminController@adminLoginForm")->name("adminlogin");
+Route::post("/check-login", "AdminController@checkUserLogin")->name("checklogin");
