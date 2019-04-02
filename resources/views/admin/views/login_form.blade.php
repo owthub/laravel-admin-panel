@@ -12,6 +12,20 @@
     <div class="login-box-body">
         <p class="login-box-msg">Login Panel</p>
 
+        @if(session()->has("message"))
+        <div class="alert alert-success">
+            <p>{{ session('message') }}</p>
+        </div>
+        @endif
+
+        @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $error)
+            <p>{{ $error }}</p>
+            @endforeach
+        </div>
+        @endif
+
         <form method="post" action="{{ route('checklogin') }}">
             {{ csrf_field() }}
             <div class="form-group has-feedback">
