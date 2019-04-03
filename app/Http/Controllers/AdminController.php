@@ -40,6 +40,8 @@ class AdminController extends Controller {
                 $logged_user_details = auth()->guard("admin")->user();
                 session(["is_active" => 1]);
                 session(["user_details" => $logged_user_details]);
+                
+                return redirect("/");
             } else {
 
                 $error_message = "Invalid credentials";
