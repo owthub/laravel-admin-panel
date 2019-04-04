@@ -45,3 +45,4 @@ Route::group(["middleware" => "admin"], function() {
 
 Route::get("/login", "AdminController@adminLoginForm")->name("adminlogin");
 Route::post("/check-login", "AdminController@checkUserLogin")->name("checklogin");
+Route::get("/logout", "AdminController@logout")->name("adminlogout");

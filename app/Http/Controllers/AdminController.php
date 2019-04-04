@@ -12,7 +12,11 @@ class AdminController extends Controller {
 
     public function adminLoginForm() {
 
-        return view("admin.views.login_form");
+        if (session("is_active") == 1) {
+            return redirect("/");
+        } else {
+            return view("admin.views.login_form");
+        }
     }
 
     public function checkUserLogin(Request $request) {
@@ -40,7 +44,7 @@ class AdminController extends Controller {
                 $logged_user_details = auth()->guard("admin")->user();
                 session(["is_active" => 1]);
                 session(["user_details" => $logged_user_details]);
-                
+
                 return redirect("/");
             } else {
 
@@ -48,6 +52,13 @@ class AdminController extends Controller {
                 return redirect()->back()->withErrors($error_message);
             }
         }
+    }
+
+    public function logout() {
+
+        Session::flush();
+        Auth::guard("admin")->logout();
+        return redirect("/login");
     }
 
 }
