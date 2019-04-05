@@ -8,14 +8,18 @@ use Datatables;
 use DB;
 use App\Models\Gender;
 use Validator;
+use App\Models\StudentClass;
+use App\Models\SchoolClass;
 
 class StudentController extends Controller {
 
     public function addStudent() {
 
         $genders = Gender::where(["status" => 1])->get();
+        $sections = StudentClass::where(["status" => 1])->get();
+        $classes = SchoolClass::where(["status" => 1])->get();
 
-        return view("admin.views.add_student", ["genders" => $genders]);
+        return view("admin.views.add_student", ["genders" => $genders, "sections" => $sections, "classes" => $classes]);
     }
 
     public function listStudents() {
@@ -88,6 +92,8 @@ class StudentController extends Controller {
             $student->roll_no = $request->roll_no;
             $student->phone_no = $request->student_phone;
             $student->address = $request->student_address;
+            $student->class_id = $request->dd_class;
+            $student->section_id = $request->dd_section;
             // student photo
 
             $valid_images = array("png", "jpg", "jpeg", "gif");

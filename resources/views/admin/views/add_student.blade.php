@@ -105,6 +105,36 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="dd_class">Class</label>
+                                <select class='form-control' id='dd_class' name='dd_class'>
+                                    @if(count($classes) > 0)
+
+                                    @foreach($classes as $index => $class)
+
+                                    <option value="{{ $class->id }}">{{ ucfirst($class->name) }}</option>
+
+                                    @endforeach
+
+                                    @endif
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="dd_section">Section</label>
+                                <select class='form-control' id='dd_section' name='dd_section'>
+                                    @if(count($sections) > 0)
+
+                                    @foreach($sections as $index => $section)
+
+                                    <option value="{{ $section->id }}">{{ ucfirst($section->section) }}</option>
+
+                                    @endforeach
+
+                                    @endif
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
                                 <label for="dd_status">Status</label>
                                 <select class='form-control' id='dd_status' name='dd_status'>
                                     <option value='1'>Active</option>
