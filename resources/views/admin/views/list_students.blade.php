@@ -35,6 +35,7 @@
                                 <th>Photo</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Class/Section</th>
                                 <th>Phone No</th>
                                 <th>Roll</th>
                                 <th>Gender</th>

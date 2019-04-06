@@ -42,7 +42,7 @@ class FacultyController extends Controller {
                         })
                         ->editColumn("profile_photo", function($faculties_query) {
 
-                            return '<img src="' . $faculties_query->profile_photo . '"/>';
+                            return '<img src="' . $faculties_query->profile_photo . '" style="height:100px;width:100px;"/>';
                         })
                         ->editColumn("gender", function($faculties_query) {
 

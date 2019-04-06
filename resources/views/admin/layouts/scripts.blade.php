@@ -101,6 +101,7 @@
                         { data: 'profile_photo', name: 'profile_photo' },
                         { data: 'name', name: 'name' },
                         { data: 'email', name: 'email' },
+                        { data: 'class_section', name: 'class_section' },
                         { data: 'phone_no', name: 'phone_no' },
                         { data: 'roll_no', name: 'roll_no' },
                         { data: 'gender', name: 'gender' },

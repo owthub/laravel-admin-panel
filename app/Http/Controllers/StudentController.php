@@ -30,8 +30,10 @@ class StudentController extends Controller {
     public function listAllStudents() {
 
         $students_query = DB::table("tbl_students as student")
-                ->select("student.*", "gender.type as gender_name")
+                ->select("student.*", "gender.type as gender_name", "class.name as class_name", "section.section as section_name")
                 ->leftJoin("tbl_genders as gender", "gender.id", "=", "student.gender_id")
+                ->leftJoin("tbl_classes as class", "class.id", "=", "student.class_id")
+                ->leftJoin("tbl_class_sections as section", "section.id", "=", "student.section_id")
                 ->where(["student.status" => 1])
                 ->get()
         ;
@@ -39,7 +41,11 @@ class StudentController extends Controller {
         return Datatables::of($students_query)
                         ->editColumn("profile_photo", function($students_query) {
 
-                            return '<img src="' . $students_query->profile_photo . '"/>';
+                            return '<img src="' . $students_query->profile_photo . '" style="height:100px;width:100px;"/>';
+                        })
+                        ->editColumn("class_section", function($students_query) {
+
+                            return $students_query->class_name . " / " . $students_query->section_name;
                         })
                         ->editColumn("gender", function($students_query) {
 
