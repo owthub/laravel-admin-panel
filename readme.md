@@ -1,51 +1,75 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Online Web Tutor Blog
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+![Online Web Tutor Blog](https://onlinewebtutorblog.com/wp-content/uploads/2020/10/Online-Web-Tutor-Blog-Web-Development-Programming-Blogs.png)
 
-## About Laravel
+This is a developed community where you will find several interesting blog articles with short and cool codes. It contains Laravel 8, CodeIgniter 4, MySQL, WordPress, Node Js etc. Please visit once and see the power of learning from this blog.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+## Find your Article
+* [Laravel 8](https://onlinewebtutorblog.com/category/laravel-8/)
+* [CakePHP 4](https://onlinewebtutorblog.com/category/cakephp-4/)
+* [CodeIgniter 4](https://onlinewebtutorblog.com/category/codeigniter-4/)
+* [WordPress](https://onlinewebtutorblog.com/category/wordpress/)
+* [MySQL](https://onlinewebtutorblog.com/category/mysql/)
+* [Node Js with Sequelize](https://onlinewebtutorblog.com/category/node-js-sequelize-orm/)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## CakePHP 4
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+* An Introduction to CakePHP 4 basics – Complete Beginners Guide
+* An Introduction to CakePHP 4 Routes Tutorial – Complete Guide
+* CakePHP 4 CRUD Tutorial with MySQL (Create, Read, Update & Delete)
+* CakePHP 4 Custom Validation Rule For Form Inputs
+* CakePHP 4 Form Validation with Example
+* How Auth Works in CakePHP 4 ? Authentication Tutorial in CakePHP 4
+* Working with CakePHP 4 Cron Jobs
 
-## Learning Laravel
+## CodeIgniter 4
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+* Ajax Request in CodeIgniter 4 | Form Data Submit by Ajax
+* CodeIgniter 4 Cookie Helper Tutorial
+* CodeIgniter 4 CRUD Tutorial | CRUD Example in CodeIgniter 4
+* CodeIgniter 4 CSRF Token | Implementation of CSRF Token in Application
+* CodeIgniter 4 Custom Library | How can Create Custom Library in CodeIgniter ?
+* CodeIgniter 4 Database Query – Complete Methods to Execute Queries
+* CodeIgniter 4 Form Validation Library – Easy & Complete Guide
+* CodeIgniter 4 Image Upload with Form data | CodeIgniter 4 Image Upload
+* CodeIgniter 4 Language Localization | CodeIgniter 4 Website in Multi Language
+* Codeigniter 4 Login and Registration | CodeIgniter 4 Signup Login
+* Codeigniter 4 Remove Public and Index.php From URL
+* CodeIgniter 4 REST APIs Development | CRUD APIs in CodeIgniter 4
+* CodeIgniter 4 RESTful APIs with JWT Authentication
+* CodeIgniter 4 Server Side DataTable Using SSP Library
+* CodeIgniter 4 Spark Module – CLI Tool To manage Database – Step by Step Guide
+* CodeIgniter 4 Upload Image with Form data using Ajax Request
+* CodeIgniter 4 Working with Multiple Databases & Connection Groups
+* Complete CodeIgniter 4 Basics Tutorial for Beginners
+* How to Fix Session Fixation Session Hijacking Attack in CodeIgniter ?
+* Joins in CodeIgniter 4 | Working with MySQL Joins in CodeIgniter 4 Application
+* Working with CodeIgniter 4 Model and Entity
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+## Laravel 8
 
-## Laravel Sponsors
+* Laravel 8 Installation Guide – PHP Framework
+* Laravel 8 Routing Tutorial Step by Step Guide
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+## MySQL
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
+* 10 Basic Commands of MySQL for Beginners – PhpMyAdmin
+* Basics Overview of MySQL Stored Procedures ? Very easy guide to learn.
+* Step by Step to Create & Call MySQL Stored Procedure – Code Basics
 
-## Contributing
+## Node Js Sequelize ORM
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+* Create Models in Node Js Sequelize ORM
+* Node Express Sequelize ORM CRUD APIs with MySQL
 
-## Security Vulnerabilities
+## Wordpress
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+* An Introduction to WordPress Global Variables- Step by Step Complete Guide
+* How can we create a Basic Widget Plugin in WordPress, Step by Step Tutorial
+* How to Perform Insert, Update & Delete with WordPress Global Database Object?
+* How to Use & Work with jQuery UI in WordPress ? Complete Guide to learn.
+* Step by Step Complete Basics Overview of WordPress Widget – What & Why ?
+* Step by Step guide to use WordPress Database Object – Find or Search Custom Queries.
+* WordPress Built-in Functions & Custom Queries using $wpdb in Widget Development
+* WordPress Theme Development Tutorial – Step by Step Beginner’s Guide
+* WordPress WP CLI Command Line Tool – Complete Guide to Work
